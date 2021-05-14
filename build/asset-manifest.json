@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c11996cf.chunk.css",
+    "main.js": "/static/js/main.d2abb87b.chunk.js",
+    "main.js.map": "/static/js/main.d2abb87b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a1ca9ee3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a1ca9ee3.js.map",
+    "static/js/2.76b068cc.chunk.js": "/static/js/2.76b068cc.chunk.js",
+    "static/js/2.76b068cc.chunk.js.map": "/static/js/2.76b068cc.chunk.js.map",
+    "static/js/3.ae740d52.chunk.js": "/static/js/3.ae740d52.chunk.js",
+    "static/js/3.ae740d52.chunk.js.map": "/static/js/3.ae740d52.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c11996cf.chunk.css.map": "/static/css/main.c11996cf.chunk.css.map",
+    "static/js/2.76b068cc.chunk.js.LICENSE.txt": "/static/js/2.76b068cc.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/nana-track-3.8738339a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1ca9ee3.js",
+    "static/js/2.76b068cc.chunk.js",
+    "static/css/main.c11996cf.chunk.css",
+    "static/js/main.d2abb87b.chunk.js"
+  ]
+}

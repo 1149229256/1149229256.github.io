@@ -1,0 +1,69 @@
+.image-show {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    height: 400px;
+    padding: 0 50px;
+    .prev-btn {
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        z-index: 5;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 50px;
+        background-image: url(./images/change-prev.png);
+        background-size: 100% 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+    .next-btn {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 50px;
+        z-index: 5;
+        background-image: url(./images/change-next.png);
+        background-size: 100% 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
+
+.nana-track-container {
+    width: 300px;
+    overflow: hidden;
+    .move-container {
+        width: 200000px;
+        position: relative;
+        left: 0;
+        transition: all .5s;
+        .nana-track {
+            display: inline-block;
+            vertical-align: top;
+            width: 300px;
+            height: 400px;
+            margin-right: 20px;
+        }
+        .nana-track-1 {
+            background-image: url(./images/nana-track-1.jpg);
+            background-size: 100% 100%;
+        }
+        .nana-track-2 {
+            background-image: url(./images/nana-track-2.jpg);
+            background-size: 100% 100%;
+        }
+        .nana-track-3 {
+            background-image: url(./images/nana-track-3.jpg);
+            background-size: 100% 100%;
+        }
+    }
+}
