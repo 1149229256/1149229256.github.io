@@ -31,7 +31,7 @@ function ImageShow(){
     const checkBtn = (currentLeft) => {
         let prevVisible = false, nextVisible = false;
         let showWidth = parseInt($(".nana-track-container").width()) - 100;
-        let actureWidth = trackList.length * $(".nana-track-container").width(), count = 1;
+        let actureWidth = trackList.length * 300, count = 1;
         count = trackList.length;
         if(actureWidth > showWidth){
             nextVisible = true;
@@ -56,7 +56,7 @@ function ImageShow(){
         clearTimeout(timeout);
         timeout = setTimeout(() => {
             let node = $(".move-container");
-            let showWidth = $(".nana-track-container").width();
+            let showWidth = 320;
             let count = trackList.length;
             // count = Math.ceil(actureWidth / showWidth);
             let currentLeft = parseInt(node.css("left"));

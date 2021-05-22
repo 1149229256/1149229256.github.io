@@ -3,7 +3,8 @@
     width: 100%;
     margin: 0 auto;
     height: 400px;
-    padding: 0 30px;
+    padding: 0 40px;
+    box-sizing: border-box;
     .prev-btn {
         position: absolute;
         left: 0px;
@@ -39,7 +40,7 @@
 }
 
 .nana-track-container {
-    width: 100%;
+    width: 300px;
     overflow: hidden;
     .move-container {
         width: 200000px;
