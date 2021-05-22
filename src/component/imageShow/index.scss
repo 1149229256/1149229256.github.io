@@ -1,9 +1,9 @@
 .image-show {
     position: relative;
-    width: 300px;
+    width: calc(100% - 60px);
     margin: 0 auto;
     height: 400px;
-    padding: 0 50px;
+    padding: 0 30px;
     .prev-btn {
         position: absolute;
         left: 0px;
@@ -39,7 +39,7 @@
 }
 
 .nana-track-container {
-    width: 300px;
+    width: 100%;
     overflow: hidden;
     .move-container {
         width: 200000px;
