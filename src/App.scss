@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.app-cover {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    background-image: url(./images/cover-1.jpg);
+    background-size: 100% 100%;
+    font-family: "楷体";
+    .tip-one {
+        position: relative;
+        top: 40px;
+        text-align: center;
+        color: lightblue;
+        opacity: 0;
+        animation: fadeIn 3s;
+        animation-delay: .5s;
+    }
+    .tip-two {
+        position: relative;
+        top: 40px;
+        text-align: center;
+        color: orangered;
+        opacity: 0;
+        animation: fadeIn 2s;
+        animation-delay: 4s;
+    }
+    .tip-three {
+        position: relative;
+        top: 40px;
+        text-align: center;
+        color: violet;
+        opacity: 0;
+        animation: fadeIn 2s;
+        animation-delay: 6s;
+    }
+    .tip-four {
+        position: relative;
+        top: 40px;
+        text-align: center;
+        color: saddlebrown;
+        opacity: 0;
+        animation: fadeIn 2s;
+        animation-delay: 8s;
+    }
+}

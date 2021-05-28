@@ -1,7 +1,7 @@
 .image-show {
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     height: 400px;
     padding: 0 40px;
     box-sizing: border-box;
@@ -40,7 +40,7 @@
 }
 
 .nana-track-container {
-    width: 300px;
+    width: 100%;
     overflow: hidden;
     .move-container {
         width: 200000px;
@@ -50,7 +50,8 @@
         .nana-track {
             display: inline-block;
             vertical-align: top;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             height: 400px;
             margin-right: 20px;
         }
