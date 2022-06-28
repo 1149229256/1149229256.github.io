@@ -147,7 +147,7 @@ export default class Index extends Component {
               })
             }
           </View>
-          <View className='choose_image' onClick={this.chooseImage}>选择图片</View>
+          {/* <View className='choose_image' onClick={this.chooseImage}>选择图片</View> */}
           <View className='tip_show'>
             <View className='show_container'>
               <View className='circle_container'>
