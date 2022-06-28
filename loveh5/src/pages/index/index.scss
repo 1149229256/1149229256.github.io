@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+.page_index {
+    .image_show {
+        height: 30vh;
+        // background-image: url(../images/show1.png);
+        .text_container {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            height: 200px;
+            transform: translateY(-50%);
+            .image_text {
+                font-size: 48px;
+                color: #fff;
+                font-family: "楷体";
+            }
+        }
+        .image-1 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(../images/show1.jpg);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .image-2 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(../images/show2.jpg);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .image-3 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(../images/show3.jpg);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    .page_bg {
+        height: 70vh;
+        background-color: #EC5664;
+        .page_list {
+            opacity: 0.8;
+            .page_one {
+                display: inline-block;
+                vertical-align: top;
+                width: 33%;
+                color: #fff;
+                font-size: 28px;
+                font-family: "楷体";
+                text-align: center;
+                i {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    margin: 40px auto 5px;
+                    background-size: 100% 100%;
+                }
+                &.list {
+                    i {
+                        background-image: url(../images/list.png);
+                    }
+                }
+                &.date {
+                    i {
+                        background-image: url(../images/date.png);
+                    }
+                }
+                &.word {
+                    i {
+                        background-image: url(../images/word.png);
+                    }
+                }
+            }
+        }
+        .tip_list {
+            width: 10000px;
+            margin-top: 80px;
+            padding-left: 30px;
+            overflow: hidden;
+            .tip_one {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 30px;
+                background-color: #fff;
+                border-radius: 30px;
+                width: 320px;
+                height: 160px;
+                padding: 20px;
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                .user_header {
+                    float: left;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background-size: 100% 100%;
+                    margin-right: 10px;
+                    &.baby {
+                        background-image: url(../images/show1.jpg);
+                    }
+                    &.my {
+                        background-image: url(../images/user_header2.jpg);
+                    }
+                    &.love {
+                        background-image: url(../images/love.png);
+                    }
+                }
+                .tip_title {
+                    font-size: 28px;
+                    margin-bottom: 0;
+                }
+                .tip_content {
+                    font-size: 24px;
+                    color: #999;
+                }
+                .level_list {
+                    margin-top: 10px;
+                    text-align: center;
+                    .level_one {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: 8px;
+                        width: 30px;
+                        height: 30px;
+                        background-size: 100% 100%;
+                        background-image: url(../images/levellogo.png);
+                    }
+                }
+            }
+        }
+    }
+    .tip_show {
+        margin-top: 100px;
+        .show_container {
+            position: relative;
+            width: 72vw;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px 0 0 150px;
+            border-radius: 5px;
+            box-shadow: -8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+            .circle_container {
+                position: absolute;
+                top: 50%;
+                right: -18px;
+                transform: translateY(-50%);
+                .circle_one {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: #EC5664;
+                    margin-bottom: 15px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .user_header {
+                position: absolute;
+                left: -80px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-size: 100% 100%;
+                background-image: url(../images/show1.jpg);
+            }
+            .tip_content {
+                font-size: 24px;
+                color: #333;
+            }
+            .level_list {
+                margin-top: 50px;
+                margin-bottom: 0;
+                line-height: 50px;
+                .level_one {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-right: 8px;
+                    width: 30px;
+                    height: 30px;
+                    background-size: 100% 100%;
+                    background-image: url(../images/levellogo.png);
+                }
+            }
+            .tip_tip {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                color: #ff3300;
+                font-size: 18px;
+                margin-top: 50px;
+            }
+        }
+    }
+}
