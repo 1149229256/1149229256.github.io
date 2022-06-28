@@ -1,6 +1,9 @@
 import { Component } from 'react'
+import Taro from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
+import {AtImagePicker} from "taro-ui";
 import './index.scss'
+import { axiosMethod } from '../util/axios';
 
 export default class Index extends Component {
   constructor(props){
@@ -37,10 +40,17 @@ export default class Index extends Component {
           level: 1,
           header: "love"
         }
-      ]
+      ],
+      baseUrl: "http://192.168.129.178:8888/"
     }
   }
-  componentWillMount () { }
+  componentWillMount () {
+    // axiosMethod("get", "info/getTipList", {}, {})
+    // .then(res=>{
+    //   console.log(res);
+    // })
+  
+  }
 
   componentDidMount () { }
 
@@ -58,6 +68,27 @@ export default class Index extends Component {
   }
   onUserClick = () => {
     
+  }
+  chooseImage = () => {
+    let baseUrl = this.state.baseUrl;
+    Taro.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有，在H5浏览器端支持使用 `user` 和 `environment`分别指定为前后摄像头
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        let tempFilePaths = res.tempFilePaths
+        let file = res.tempFiles[0].originalFileObj;
+        let formData = new FormData();
+        formData.append("file", file);
+        axiosMethod("post", baseUrl + "common/upload", formData, {
+          "Content-Type": "multipart/form-data"
+        })
+        .then(res=>{
+          console.log(res);
+        })
+      }
+    })
   }
   render () {
     let {
@@ -116,7 +147,7 @@ export default class Index extends Component {
               })
             }
           </View>
-
+          <View className='choose_image' onClick={this.chooseImage}>选择图片</View>
           <View className='tip_show'>
             <View className='show_container'>
               <View className='circle_container'>

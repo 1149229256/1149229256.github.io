@@ -1,0 +1,16 @@
+{
+    "tipList": [
+        {
+            "tipTitle": "宝宝的生日",
+            "content": "2022-06-28",
+            "userHeader": "uploads/baby.png",
+            "level": 5
+        },
+        {
+            "tipTitle": "我的生日",
+            "content": "2022-05-18",
+            "userHeader": "uploads/my.png",
+            "level": 1
+        }
+    ]
+}
