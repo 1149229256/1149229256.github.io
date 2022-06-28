@@ -43,7 +43,7 @@ const config = {
     }
   },
   h5: {
-    publicPath: '/',
+    publicPath: '/loveh5/',
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
