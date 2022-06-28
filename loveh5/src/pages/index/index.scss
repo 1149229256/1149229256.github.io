@@ -47,8 +47,10 @@
         }
     }
     .page_bg {
+        width: 100vw;
         height: 70vh;
         background-color: #EC5664;
+        overflow: hidden;
         .page_list {
             opacity: 0.8;
             .page_one {
@@ -87,7 +89,6 @@
             width: 10000px;
             margin-top: 80px;
             padding-left: 30px;
-            overflow: hidden;
             .tip_one {
                 display: inline-block;
                 vertical-align: top;
