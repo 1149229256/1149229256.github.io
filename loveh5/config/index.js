@@ -45,6 +45,7 @@ const config = {
   h5: {
     publicPath: '/loveh5/dist/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     postcss: {
       autoprefixer: {
         enable: true,

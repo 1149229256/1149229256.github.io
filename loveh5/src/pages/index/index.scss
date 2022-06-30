@@ -1,7 +1,22 @@
-@import "~taro-ui/dist/style/components/image-picker.scss";
+@import "~taro-ui/dist/style/components/modal.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/loading.scss";
+@import "~taro-ui/dist/style/components/input.scss";
 @import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/message.scss";
 * {
     box-sizing: border-box;
+}
+
+.modal_btn {
+    width: 50%;
+}
+
+.password_input {
+    margin-top: 40px;
+    &::after {
+        border-bottom: 0;
+    }
 }
 
 .page_index {
@@ -58,7 +73,7 @@
             .page_one {
                 display: inline-block;
                 vertical-align: top;
-                width: 33%;
+                width: 25%;
                 color: #fff;
                 font-size: 28px;
                 font-family: "楷体";

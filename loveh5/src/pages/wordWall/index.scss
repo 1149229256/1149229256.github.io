@@ -1,0 +1,84 @@
+@import "~taro-ui/dist/style/components/float-layout.scss";
+@import "~taro-ui/dist/style/components/textarea.scss";
+* {
+    box-sizing: border-box;
+}
+
+.word_container {
+    .word_wall {
+        height: 100vh;
+        overflow: auto;
+        background-image: url(../images/word_bg.png);
+        background-size: 100% 100%;
+        padding-top: 100px;
+        .word_one {
+            padding: 20px 20px 20px 130px;
+            margin: 0 20px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            .word_header {
+                float: left;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-size: 100% 100%;
+                margin-left: -110px;
+            }
+            .user_name {
+                font-size: 30px;
+                taro-text-core {
+                    color: #999;
+                    font-size: 18px;
+                    margin-left: 10px;
+                }
+            }
+            .word_content {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            .btn_container {
+                text-align: right;
+                color: #999;
+                font-size: 16px;
+                padding-top: 10px;
+                .zanlogo {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 30px;
+                    height: 30px;
+                    background-size: 100% 100%;
+                    position: relative;
+                    top: -4px;
+                    margin-right: 3px;
+                    background-image: url(../images/option/点赞.png);
+                }
+            }
+        }
+    }
+    .add_btn {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-size: 100% 100%;
+        background-color: #EC5664;
+        background-image: url(../images/添加.png);
+        &:active {
+            opacity: 0.75;
+        }
+    }
+    .confirm_btn {
+        float: right;
+        margin-top: 10px;
+        width: 120px;
+        height: 60px;
+        font-size: 30px;
+        line-height: 58px;
+        text-align: center;
+        color: #999;
+        border-radius: 8px;
+        border: 1px solid #999;
+    }
+}

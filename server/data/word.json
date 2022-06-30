@@ -1,13 +1,1 @@
-{
-    "wordList": [{
-            "userName": "pzw",
-            "publishTime": "2022-06-28",
-            "content": "我好想你"
-        },
-        {
-            "userName": "pzw",
-            "publishTime": "2022-06-28",
-            "content": "我好想你2"
-        }
-    ]
-}
+{"wordList":[{"userName":"pzw","headerImage":"/default/header_boy.png","publishTime":"2022-06-28","content":"我好想你","zanCount":0},{"userName":"pzw","headerImage":"/default/header_girl.png","publishTime":"2022-06-28","content":"我好想你2","zanCount":0},{"userName":"pzw","headerImage":"/default/header_boy.png","publishTime":"2022-06-30 17:50:51","content":"我是新增的留言","zanCount":0},{"userName":"pzw","headerImage":"/default/header_boy.png","publishTime":"2022-06-30 18:00","content":"阿道夫都市网"}]}

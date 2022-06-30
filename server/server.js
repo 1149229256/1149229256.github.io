@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));  //资源访问路径可以省略public, 直接ip:port/uploads/xxx
 
 var CommonRouter = require("./routes/common");
+var WordRouter = require("./routes/word");
+
 
 //处理请求跨域
 app.all('*', function(req, res, next) {
@@ -22,6 +24,7 @@ app.all('*', function(req, res, next) {
 });
 
 app.use("/common", CommonRouter);
+app.use("/word", WordRouter);
 
 
 //统一响应数据格式
@@ -32,7 +35,6 @@ function responseRule(data, code, msg){
         msg: msg? msg: "正常"
     }
 }
-
 app.get("/info/getTipList", function(req, res){
     fs.readFile(__dirname + '/data/tip.json', 'utf-8', function(err, dataStr) {
         if(err){
@@ -44,16 +46,19 @@ app.get("/info/getTipList", function(req, res){
 })
 
 app.get("/info/getWordList", function(req, res){
+    let params = req.query;
     fs.readFile(__dirname + '/data/word.json', 'utf-8', function(err, dataStr) {
         if(err){
             return console.log('文件读取失败：' + err.message);
         }
         var list = JSON.parse(dataStr).wordList;
-        res.send(JSON.stringify(responseRule(list)));
+        var size = params.pageSize? params.pageSize: 10;
+        var updateList = list.slice((params.page-1)*size, params.page*size);
+        res.send(JSON.stringify(responseRule(updateList)));
     })
 })
 
-app.listen("8888", function(){
-    console.log("server is running at port 8888");
+app.listen("8889", function(){
+    console.log("server is running at port 8889");
 })
 

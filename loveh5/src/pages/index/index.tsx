@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
-import {AtImagePicker} from "taro-ui";
+import { AtModal, AtModalHeader, AtModalContent, AtModalAction, AtButton, AtInput, AtMessage } from "taro-ui"
 import './index.scss'
 import { axiosMethod } from '../util/axios';
 
@@ -41,7 +41,9 @@ export default class Index extends Component {
           header: "love"
         }
       ],
-      baseUrl: "http://192.168.129.178:8888/"
+      password: "",
+      passwordVisible: true,
+      baseUrl: "http://192.168.129.178:8889/"
     }
   }
   componentWillMount () {
@@ -49,10 +51,15 @@ export default class Index extends Component {
     // .then(res=>{
     //   console.log(res);
     // })
-  
   }
 
-  componentDidMount () { }
+  componentDidMount () { 
+    if(sessionStorage.getItem("password")){
+      this.setState({
+        password: sessionStorage.getItem("password")
+      })
+    }
+  }
 
   componentWillUnmount () { }
 
@@ -90,13 +97,63 @@ export default class Index extends Component {
       }
     })
   }
+  changePassword = (value) => {
+    this.setState({
+      password: value
+    })
+  }
+  changePasswordVisible = (value) => {
+    this.setState({
+      passwordVisible: value
+    }, ()=>{
+      if(this.state.password === "20201012"){
+        Taro.atMessage({
+          'message': '欢迎我的主人~',
+          'type': "",
+        })
+      } else {
+        Taro.atMessage({
+          'message': '欢迎你来到我们的小屋~',
+          'type': "",
+        })
+      }
+      if(this.state.password){
+        axiosMethod("get", "common/getUserInfo", {
+          key: this.state.password
+        })
+        .then(res=>{
+          let result = res.data;
+          if(result.code === 200 && result.data){
+            sessionStorage.setItem("userInfo", JSON.stringify(result.data));
+          }
+        })
+      }
+      sessionStorage.setItem("password", "true");
+    })
+  }
+  goOtherPage = (type) => {
+    if(type === "first"){
+
+    }
+    if(type === "date"){
+
+    }
+    if(type === "word"){
+      Taro.navigateTo({
+        url: "/pages/wordWall/index"
+      })
+    }
+  }
   render () {
     let {
-      tipList
+      tipList,
+      password,
+      passwordVisible
     } = this.state;
     return (
       <View className='page_index'>
-          <Swiper
+        <AtMessage />
+        <Swiper
           className='image_show'
           indicatorColor='#ccc'
           indicatorActiveColor='#fff'
@@ -118,11 +175,15 @@ export default class Index extends Component {
             <View className='image-3'></View>
           </SwiperItem>
         </Swiper>
+        <View className='right_option'>
+          <View className='设置轮播图片'></View>
+        </View>
         <View className='page_bg'>
           <View className='page_list'>
-              <View className='page_one list'><i></i>我们的第一次</View>
-              <View className='page_one date'><i></i>我们的纪念日</View>
-              <View className='page_one word'><i></i>留言墙</View>
+              <View className='page_one list' onClick={()=>this.goOtherPage("first")}><i></i>我们的第一次</View>
+              <View className='page_one date' onClick={()=>this.goOtherPage("date")}><i></i>我们的纪念日</View>
+              <View className='page_one word' onClick={()=>this.goOtherPage("word")}><i></i>留言墙</View>
+              <View className='page_one word' onClick={()=>this.goOtherPage("user")}><i></i>我的</View>
           </View>
           <View className='tip_list'>
             {
@@ -171,6 +232,30 @@ export default class Index extends Component {
             </View>
           </View>
         </View>
+        {
+          sessionStorage.getItem("password")?
+          "":
+          <AtModal isOpened={passwordVisible}>
+            {/* <AtModalHeader>请输入邀请码</AtModalHeader> */}
+            <AtModalContent>
+              <AtInput
+                className="password_input"
+                name='value2'
+                title=''
+                type='number'
+                maxLength='6'
+                placeholder='请输入邀请码...'
+                value={password}
+                onChange={this.changePassword}
+              />
+            </AtModalContent>
+            <AtModalAction>
+              <AtButton className="modal_btn" onClick={()=>this.changePasswordVisible(false)}>确定</AtButton>
+              <AtButton className="modal_btn" onClick={()=>this.changePasswordVisible(false)}>我是游客</AtButton>
+            </AtModalAction>
+          </AtModal>
+        }
+        
       </View>
     )
   }

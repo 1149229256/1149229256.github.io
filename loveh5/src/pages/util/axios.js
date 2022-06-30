@@ -1,11 +1,21 @@
 import axios from "axios";
 
+const protocol = window.location.protocol;
+const host = window.location.host;
+
+window.BasicProxy = "http://192.168.129.178:8889/" || protocol + "://" + host;
+
 export const axiosMethod = (type, url, body, header) => {
     let result = axios({
+        baseURL: 'http://192.168.129.178:8889/',
         method: type,
         url,
-        data: body,
-        headers: header
+        params: type === "get"? body: {},
+        data: type === "get"? {}: body,
+        headers: {
+            "Content-Type": type === "get"? "application/x-www-form-urlencoded": "application/json",
+            ...header
+        }
     })
     return result;
 }
